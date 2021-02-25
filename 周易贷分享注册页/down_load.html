@@ -1,0 +1,49 @@
+<!DOCTYPE html>
+<html>
+	<head>
+		<meta charset="UTF-8">
+		<meta name="viewport" content="width=device-width, initial-scale=1.0, maximum-scale=1.0, user-scalable=0">
+		<title>下载</title>
+		<link rel="stylesheet" type="text/css" href="css/index.css"/>
+	</head>
+	<body>
+		<div class="bg">
+			<div class="android" style="display: none;">
+				<img src="img/android.png" style="opacity: 0.7;"/>
+				安卓手机用户下载
+			</div>
+			<div class="ios" style="display: none;">
+				<img src="img/ios.png" style="opacity: 0.7;"/>
+				苹果IOS手机用户下载
+			</div>
+		</div>
+		<div class="mask" style="display: none;position: absolute;top: 0;"></div>
+	</body>
+	<script src="js/jquery-1.9.1.min.js" type="text/javascript" charset="utf-8"></script>
+	<script type="text/javascript">
+		document.documentElement.style.fontSize = document.documentElement.clientWidth / 7.5 + 'px';
+		$(".bg").height($(window).height())
+		$(".mask").height($(window).height())
+
+    var downlink = 'https://www.dongxugj.com/go/nIvA7v'
+		var u = navigator.userAgent, app = navigator.appVersion;
+		var isAndroid = u.indexOf('Android') > -1 || u.indexOf('Linux') > -1; //g
+		var isIOS = !!u.match(/\(i[^;]+;( U;)? CPU.+Mac OS X/); //ios终端
+		if (isAndroid) {
+		    $(".android").show()
+		}
+		if (isIOS) {
+		　　$(".ios").show()
+		}
+
+		$(".android").click(function(){
+			$(".mask").show();
+			window.location.href = downlink
+		})
+		$(".ios").click(function(){
+			$(".mask").show()
+			window.location.href = downlink
+		})
+
+	</script>
+</html>
